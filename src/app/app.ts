@@ -10,14 +10,14 @@ import { RouterOutlet } from '@angular/router';
     `
       :host {
         display: block;
-        min-height: 100vh;
+        min-height: 100dvh;
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         color: #e2e8f0;
-        background: #0f131b;
+        background: transparent;
       }
 
       .app-shell {
-        min-height: 100vh;
+        min-height: 100dvh;
       }
     `
   ]

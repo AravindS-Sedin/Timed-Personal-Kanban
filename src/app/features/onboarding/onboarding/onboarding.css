@@ -1,9 +1,9 @@
 .onboarding-wrap {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0f131b;
+  background: transparent;
   padding: 16px;
 }
 

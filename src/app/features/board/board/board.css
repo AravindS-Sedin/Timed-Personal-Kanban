@@ -1,6 +1,6 @@
 .board-page {
-  min-height: 100vh;
-  background: #0f131b;
+  min-height: 100dvh;
+  background: transparent;
   color: #e2e8f0;
   padding: 16px;
   display: grid;
