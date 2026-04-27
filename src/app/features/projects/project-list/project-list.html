@@ -1,1 +1,71 @@
-<p>project-list works!</p>
+<section class="projects-page">
+  <header class="top-row">
+    <div>
+      <h1>{{ userName ? (userName + "'s Projects") : 'Projects' }}</h1>
+      <p>Build boards and track cycle time across stages.</p>
+    </div>
+  </header>
+
+  <div class="create-row">
+    <app-input
+      [value]="projectName"
+      placeholder="New project name"
+      (valueChange)="projectName = $event"
+    />
+    <app-button
+      label="Create Project"
+      [disabled]="!projectName.trim()"
+      (pressed)="createProject()"
+    />
+  </div>
+
+  <div class="project-grid" *ngIf="projects.length; else emptyState">
+    <article class="project-card" *ngFor="let project of projects" (click)="openProject(project.id)">
+      <ng-container *ngIf="editingProjectId !== project.id; else editMode">
+        <h3>{{ project.name }}</h3>
+        <p>{{ taskCount(project.id) }} tasks</p>
+        <p>{{ columnCount(project.id) }} columns</p>
+
+        <div class="project-actions" (click)="$event.stopPropagation()">
+          <app-button
+            label="Edit"
+            variant="secondary"
+            (pressed)="startEdit(project)"
+          />
+          <app-button
+            label="Delete"
+            variant="danger"
+            (pressed)="deleteProject(project.id)"
+          />
+        </div>
+      </ng-container>
+
+      <ng-template #editMode>
+        <div class="project-edit" (click)="$event.stopPropagation()">
+          <app-input
+            [value]="editProjectName"
+            placeholder="Project name"
+            (valueChange)="editProjectName = $event"
+          />
+
+          <div class="project-actions">
+            <app-button
+              label="Save"
+              [disabled]="!editProjectName.trim()"
+              (pressed)="saveEdit(project.id)"
+            />
+            <app-button
+              label="Cancel"
+              variant="secondary"
+              (pressed)="cancelEdit()"
+            />
+          </div>
+        </div>
+      </ng-template>
+    </article>
+  </div>
+
+  <ng-template #emptyState>
+    <div class="empty-card">No projects yet. Create your first one.</div>
+  </ng-template>
+</section>
