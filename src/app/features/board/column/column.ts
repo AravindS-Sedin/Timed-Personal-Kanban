@@ -12,8 +12,8 @@ import { TaskCardComponent } from '../task-card/task-card';
   selector: 'app-column',
   standalone: true,
   imports: [CommonModule, FormsModule, DragDropModule, InputComponent, ButtonComponent, TaskCardComponent],
-  templateUrl: './column.component.html',
-  styleUrl: './column.component.css'
+  templateUrl: './column.html',
+  styleUrl: './column.css'
 })
 export class ColumnComponent {
   @Input({ required: true }) column!: Column;

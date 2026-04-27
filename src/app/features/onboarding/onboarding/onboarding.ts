@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageService } from '../../core/services/storage';
-import { InputComponent } from '../../shared/components/input/input';
-import { ButtonComponent } from '../../shared/components/button/button.';
-import { User } from '../../models/user.model';
+import { StorageService } from '../../../core/services/storage';
+import { InputComponent } from '../../../shared/components/input/input';
+import { ButtonComponent } from '../../../shared/components/button/button';
+import { User } from '../../../models/user.model';
 
 const USER_KEY = 'kanban_user';
 
@@ -11,8 +11,8 @@ const USER_KEY = 'kanban_user';
   selector: 'app-onboarding',
   standalone: true,
   imports: [InputComponent, ButtonComponent],
-  templateUrl: './onboarding.component.html',
-  styleUrl: './onboarding.component.css'
+  templateUrl: './onboarding.html',
+  styleUrl: './onboarding.css'
 })
 export class OnboardingComponent {
   name = '';

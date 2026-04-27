@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ProjectService } from '../../core/services/project';
-import { StorageService } from '../../core/services/storage';
-import { InputComponent } from '../../shared/components/input/input';
-import { ButtonComponent } from '../../shared/components/button/button';
-import { Project } from '../../models/project.model';
-import { User } from '../../models/user.model';
+import { ProjectService } from '../../../core/services/project';
+import { StorageService } from '../../../core/services/storage';
+import { InputComponent } from '../../../shared/components/input/input';
+import { ButtonComponent } from '../../../shared/components/button/button';
+import { Project } from '../../../models/project.model';
+import { User } from '../../../models/user.model';
 
 const USER_KEY = 'kanban_user';
 
@@ -14,8 +14,8 @@ const USER_KEY = 'kanban_user';
   selector: 'app-project-list',
   standalone: true,
   imports: [CommonModule, InputComponent, ButtonComponent],
-  templateUrl: './project-list.component.html',
-  styleUrl: './project-list.component.css'
+  templateUrl: './project-list.html',
+  styleUrl: './project-list.css'
 })
 export class ProjectListComponent {
   projectName = '';

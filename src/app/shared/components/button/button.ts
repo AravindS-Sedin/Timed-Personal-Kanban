@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.css'
+  templateUrl: './button.html',
+  styleUrl: './button.css'
 })
 export class ButtonComponent {
   @Input() label = '';

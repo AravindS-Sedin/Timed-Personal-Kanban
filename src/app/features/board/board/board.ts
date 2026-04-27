@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CdkDragDrop, DragDropModule } from '@angular/cdk/drag-drop';
-import { ProjectService } from '.src/app/core/services/project';
-import { StorageService } from '../../core/services/storage';
-import { InputComponent } from '../../shared/components/input/input';
-import { ButtonComponent } from '../../shared/components/button/button';
-import { ColumnComponent } from './column/column';
-import { Column } from '../../models/column.model';
-import { Project } from '../../models/project.model';
-import { User } from '../../models/user.model';
-import { Task } from '../../models/task.model';
+import { ProjectService } from '../../../core/services/project';
+import { StorageService } from '../../../core/services/storage';
+import { InputComponent } from '../../../shared/components/input/input';
+import { ButtonComponent } from '../../../shared/components/button/button';
+import { ColumnComponent } from '../column/column';
+import { Column } from '../../../models/column.model';
+import { Project } from '../../../models/project.model';
+import { User } from '../../../models/user.model';
+import { Task } from '../../../models/task.model';
  
 const USER_KEY = 'kanban_user';
  
@@ -19,8 +19,8 @@ const USER_KEY = 'kanban_user';
   selector: 'app-board',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink, DragDropModule, InputComponent, ButtonComponent, ColumnComponent],
-  templateUrl: './board.component.html',
-  styleUrl: './board.component.css'
+  templateUrl: './board.html',
+  styleUrl: './board.css'
 })
 export class BoardComponent {
   addColumnName = '';
