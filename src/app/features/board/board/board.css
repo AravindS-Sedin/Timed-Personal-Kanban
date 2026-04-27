@@ -1,0 +1,77 @@
+.board-page {
+  min-height: 100vh;
+  background: #0f131b;
+  color: #e2e8f0;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.back-link {
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+h1 {
+  margin: 6px 0 4px;
+  font-size: 24px;
+}
+
+p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.add-column-row {
+  width: 100%;
+  max-width: 430px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.delete-prompt {
+  background: #1a202c;
+  border: 1px solid #2b3444;
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.delete-prompt p {
+  color: #cbd5e1;
+}
+
+.delete-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+select {
+  min-width: 180px;
+  border-radius: 8px;
+  border: 1px solid #2f3a4d;
+  background: #111827;
+  color: #e2e8f0;
+  padding: 8px 10px;
+}
+
+.board-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
