@@ -1,0 +1,85 @@
+.column-card {
+  width: 320px;
+  min-width: 320px;
+  background: #161d28;
+  border: 1px solid #2d3748;
+  border-radius: 10px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.column-header {
+  display: grid;
+  gap: 8px;
+}
+
+.title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e2e8f0;
+}
+
+.title-wrap h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.title-wrap span {
+  background: #253247;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.rename-row,
+.task-add-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.column-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.text-btn {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.text-btn.danger {
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.text-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.task-list {
+  min-height: 120px;
+  display: grid;
+  gap: 8px;
+}
+
+.task-drag-item {
+  cursor: grab;
+}
+
+.cdk-drag-preview {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.35;
+}

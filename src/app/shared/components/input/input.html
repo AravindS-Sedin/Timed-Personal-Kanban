@@ -1,1 +1,8 @@
-<p>input works!</p>
+<input
+  class="app-input"
+  [type]="type"
+  [disabled]="disabled"
+  [placeholder]="placeholder"
+  [ngModel]="value"
+  (ngModelChange)="valueChange.emit($event)"
+/>

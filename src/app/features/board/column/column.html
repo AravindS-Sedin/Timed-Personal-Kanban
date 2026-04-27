@@ -1,1 +1,44 @@
-<p>column works!</p>
+<section class="column-card">
+  <header class="column-header">
+    <div class="title-wrap" *ngIf="!renameMode; else renameTpl">
+      <h3>{{ column.name }}</h3>
+      <span>{{ tasks.length }}</span>
+    </div>
+
+    <ng-template #renameTpl>
+      <div class="rename-row">
+        <app-input [value]="renameValue" (valueChange)="renameValue = $event" />
+        <app-button label="Save" variant="secondary" (pressed)="saveRename()" />
+      </div>
+    </ng-template>
+
+    <div class="column-actions" *ngIf="!renameMode">
+      <button class="text-btn" type="button" (click)="startRename()">Edit</button>
+      <button class="text-btn danger" type="button" [disabled]="isLockedColumn" (click)="columnDeleteRequest.emit(column.id)">
+        Delete
+      </button>
+    </div>
+  </header>
+
+  <div class="task-add-row">
+    <app-input [value]="taskTitle" placeholder="New task title" (valueChange)="taskTitle = $event" />
+    <app-button label="Add" variant="secondary" [disabled]="!taskTitle.trim()" (pressed)="addTask()" />
+  </div>
+
+  <div
+    class="task-list"
+    cdkDropList
+    [id]="dropListId"
+    [cdkDropListData]="tasks"
+    [cdkDropListConnectedTo]="connectedDropListIds"
+    (cdkDropListDropped)="taskDrop.emit({ event: $event, columnId: column.id })"
+  >
+    <div class="task-drag-item" *ngFor="let task of tasks" cdkDrag [cdkDragData]="task">
+      <app-task-card
+        [task]="task"
+        [showBreakdown]="column.id === completedColumnId"
+        (deleteTask)="taskDelete.emit($event)"
+      />
+    </div>
+  </div>
+</section>

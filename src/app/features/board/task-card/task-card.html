@@ -1,1 +1,13 @@
-<p>task-card works!</p>
+<article class="task-card">
+  <div class="task-row">
+    <h4>{{ task.title }}</h4>
+    <button class="icon-btn" type="button" (click)="deleteTask.emit(task.id)">×</button>
+  </div>
+
+  <div class="breakdown" *ngIf="showBreakdown && breakdown().length">
+    <div class="breakdown-item" *ngFor="let item of breakdown()">
+      <span>{{ item.columnName }}</span>
+      <strong>{{ timeTrackingService.formatDuration(item.milliseconds) }}</strong>
+    </div>
+  </div>
+</article>

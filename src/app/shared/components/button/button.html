@@ -1,1 +1,3 @@
-<p>button works!</p>
+<button class="app-button" [ngClass]="variant" [type]="type" [disabled]="disabled" (click)="pressed.emit()">
+  {{ label }}
+</button>

@@ -1,1 +1,42 @@
-<p>board works!</p>
+<section class="board-page" *ngIf="project as activeProject">
+  <header class="board-header">
+    <div>
+      <a class="back-link" routerLink="/projects">← Back to Projects</a>
+      <h1>{{ activeProject.name }}</h1>
+      <p>{{ userName }} • {{ activeProject.tasks.length }} tasks</p>
+    </div>
+
+    <div class="add-column-row">
+      <app-input [value]="addColumnName" placeholder="New column name" (valueChange)="addColumnName = $event" />
+      <app-button label="Add Column" [disabled]="!addColumnName.trim()" (pressed)="addColumn()" />
+    </div>
+  </header>
+
+  <section class="delete-prompt" *ngIf="pendingDeleteColumnId">
+    <p>This column has tasks. Select where to move them before deleting.</p>
+    <div class="delete-actions">
+      <select [(ngModel)]="moveTargetColumnId">
+        <option *ngFor="let column of activeProject.columns" [ngValue]="column.id" [disabled]="column.id === pendingDeleteColumnId">
+          {{ column.name }}
+        </option>
+      </select>
+      <app-button label="Confirm Delete" variant="danger" (pressed)="confirmColumnDelete()" />
+      <app-button label="Cancel" variant="secondary" (pressed)="cancelColumnDelete()" />
+    </div>
+  </section>
+
+  <div class="board-scroll" cdkDropListGroup>
+    <app-column
+      *ngFor="let column of activeProject.columns"
+      [column]="column"
+      [tasks]="tasksForColumn(column.id)"
+      [connectedDropListIds]="dropListIds"
+      [completedColumnId]="completedColumnId"
+      (taskDrop)="onTaskDropped($event)"
+      (taskAdd)="onTaskAdd($event)"
+      (taskDelete)="onTaskDelete($event)"
+      (columnRename)="onColumnRename($event)"
+      (columnDeleteRequest)="onColumnDeleteRequest($event)"
+    />
+  </div>
+</section>
