@@ -1,0 +1,18 @@
+.app-input {
+  width: 100%;
+  background: #141922;
+  border: 1px solid #2b3342;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.app-input:focus {
+  border-color: #4c72b9;
+}
+
+.app-input::placeholder {
+  color: #94a3b8;
+}
