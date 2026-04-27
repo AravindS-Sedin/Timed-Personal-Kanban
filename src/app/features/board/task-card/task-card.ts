@@ -8,8 +8,8 @@ import { TimeTrackingService } from '../../../core/services/time-tracking';
   selector: 'app-task-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './task-card.component.html',
-  styleUrl: './task-card.component.css'
+  templateUrl: './task-card.html',
+  styleUrl: './task-card.css'
 })
 export class TaskCardComponent {
   @Input({ required: true }) task!: Task;

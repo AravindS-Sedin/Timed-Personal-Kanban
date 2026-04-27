@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-input',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.css'
+  templateUrl: './input.html',
+  styleUrl: './input.css'
 })
 export class InputComponent {
   @Input() value = '';

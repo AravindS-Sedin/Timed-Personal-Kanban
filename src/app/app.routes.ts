@@ -1,8 +1,8 @@
 import { Routes, CanActivateFn, CanMatchFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
-import { OnboardingComponent } from './features/onboarding/onboarding';
-import { ProjectListComponent } from './features/projects/project-list';
-import { BoardComponent } from './features/board/board';
+import { OnboardingComponent } from './features/onboarding/onboarding/onboarding';
+import { ProjectListComponent } from './features/projects/project-list/project-list';
+import { BoardComponent } from './features/board/board/board';
 import { StorageService } from './core/services/storage';
 import { User } from './models/user.model';
 
