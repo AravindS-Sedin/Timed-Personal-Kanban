@@ -1,1 +1,19 @@
-<p>onboarding works!</p>
+<section class="onboarding-wrap">
+  <div class="onboarding-card">
+    <h1>Welcome to Kanban </h1>
+    <p>Track your flow and measure how long tasks spend in each stage.</p>
+
+    <label>Your name</label>
+    <app-input
+      [value]="name"
+      placeholder="Enter your name"
+      (valueChange)="name = $event"
+    />
+
+    <app-button
+      label="Start"
+      [disabled]="!name.trim()"
+      (pressed)="continue()"
+    />
+  </div>
+</section>
